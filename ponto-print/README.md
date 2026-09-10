@@ -1,11 +1,26 @@
 # Ponto Print — site + API de orçamentos
 
-Landing page de rolagem contínua (hero → materiais → diferenciais → portfólio → ajuda → como funciona → FAQ → orçamento) com CTAs de WhatsApp contextuais, formulário que grava no banco e notifica, métricas próprias de visita (sem cookies) e um painel para acompanhar visitas, cliques e pedidos.
+Landing page de rolagem contínua (hero → serviços em destaque → lista completa → diferenciais → portfólio → público e região → como funciona → FAQ → contato) com CTAs de WhatsApp contextuais, formulário que grava no banco e notifica, métricas próprias de visita (sem cookies) e um painel para acompanhar visitas, cliques e pedidos.
+
+O WhatsApp **(11) 91969-3833** é o canal principal de conversão: cada botão da página abre a conversa já com a mensagem do contexto onde foi clicado, e o formulário termina oferecendo continuar no WhatsApp com o pedido preenchido.
+
+> **Antes de publicar, leia [PENDENCIAS.md](PENDENCIAS.md).** Domínio, e-mail de
+> pedidos, logo vetorial e fotos reais dos trabalhos ainda dependem de
+> confirmação. O que não foi confirmado não aparece no site em vez de aparecer
+> errado.
+
+## Identidade
+
+Fundo branco, preto como cor principal e CMYK (ciano, magenta, amarelo) em uso
+pontual: filetes finos, marcações de seção e realces. Tipografia da marca é a
+**Objektiva**; como é licenciada, a web carrega **Archivo** como substituta
+próxima e passa a usar a Objektiva sozinha se ela estiver instalada ou for
+auto-hospedada (ver topo do `public/css/styles.css`).
 
 ## Stack
 
 - **Backend:** Node 22+ e Express 5. Banco SQLite embutido no Node (`node:sqlite`) — sem dependência nativa, sem servidor de banco.
-- **Frontend:** HTML, CSS e JS puros, sem build. Fonte Bricolage Grotesque (Google Fonts).
+- **Frontend:** HTML, CSS e JS puros, sem build. Fonte Archivo (Google Fonts), com Objektiva na frente da pilha.
 - **Deploy:** `npm start`, PM2 ou Docker (Dockerfile e compose inclusos).
 
 ```
@@ -21,7 +36,10 @@ server/
 public/
   index.html, css/styles.css, js/main.js, js/config.js
   admin/              painel de pedidos (token)
+  assets/og.png       imagem de compartilhamento (1200x630)
   assets/portfolio/   placeholders — trocar por fotos reais
+design/og.html        arte da og.png, em HTML/CSS
+scripts/gerar-og.mjs  regera a og.png a partir do design/og.html
 ```
 
 ## Rodando
@@ -38,12 +56,37 @@ Painel: `http://localhost:3000/admin` → cole o `ADMIN_TOKEN`.
 
 ## O que ajustar antes de publicar
 
-1. **`public/js/config.js`** — número do WhatsApp (só dígitos, com 55), Instagram, endereço, horário e as mensagens pré-preenchidas de cada botão.
-2. **`public/index.html`** — trocar `pontoprint.com.br` nas metas/canonical/JSON-LD pelo domínio real; conferir textos do FAQ (prazo, pagamento, entrega são suposições razoáveis, não regras da loja).
-3. **`public/assets/portfolio/*.svg`** — substituir por fotos reais (JPG/WebP ~1200px, 4:3). Manter o `alt` descritivo.
-4. **`public/assets/og.png`** — criar imagem 1200×630 para compartilhamento (WhatsApp/Instagram usam).
-5. **`.env`** — `PUBLIC_URL`, `TRUST_PROXY=1` se estiver atrás de Nginx/Caddy/Cloudflare/Railway, e as notificações que quiser.
-6. Ao alterar CSS/JS em produção, troque o `?v=1` nos links do HTML (cache de 1 dia nos estáticos).
+A lista completa, com o motivo de cada pendência, está em
+**[PENDENCIAS.md](PENDENCIAS.md)**. Resumo:
+
+1. **`public/js/config.js`** — é o único arquivo que a Ponto Print precisa editar
+   no dia a dia: WhatsApp, endereço, horário, e-mail, redes, CNPJ, razão social,
+   link do mapa e as mensagens de cada botão. Campo vazio (`''`) some da página.
+2. **Domínio** — trocar `pontoprint.com.br` em metas, JSON-LD, `sitemap.xml` e
+   `robots.txt` (há um comando pronto no PENDENCIAS.md).
+3. **`public/assets/portfolio/*.svg`** — substituir pelos trabalhos reais
+   (JPG/WebP ~1200px, 4:3). Manter o `alt` descritivo.
+4. **`public/assets/og.png`** — já existe uma arte tipográfica; a definitiva leva
+   foto de trabalho real. Editar `design/og.html` e rodar `node scripts/gerar-og.mjs`.
+5. **FAQ** — as respostas de pagamento e entrega estão propositalmente abertas
+   ("confirmamos no atendimento"). Fechar o texto quando a política for definida.
+6. **`.env`** — `PUBLIC_URL`, `TRUST_PROXY=1` se estiver atrás de
+   Nginx/Caddy/Cloudflare/Railway, e as notificações que quiser.
+7. Ao alterar CSS/JS em produção, troque o `?v=3` nos links do HTML (cache de 1
+   dia nos estáticos).
+
+## Serviços e tipos de pedido
+
+O `<select>` do formulário, o `TIPOS` de `server/routes/leads.js`, o `tipoLabel`
+de `public/js/main.js` e o do painel precisam andar juntos. Hoje são:
+`placas`, `adesivos`, `plotagem`, `fotos`, `impressao`, `grafica`, `acabamento`,
+`personalizados`, `arte`, `nao-sei`. Pedidos antigos (`empresa`, `evento`,
+`personalizado`) continuam aparecendo no painel marcados como "(antigo)".
+
+O site não afirma produção própria de offset industrial, UV, látex, solvente,
+grandes tiragens, verniz localizado ou laminação soft touch — há um aviso de
+transparência dizendo que parte dos acabamentos especiais é feita com parceiros.
+Manter assim ao editar textos.
 
 ## API
 

@@ -14,12 +14,21 @@
   const headers = () => ({ Authorization: `Bearer ${getToken()}`, 'Content-Type': 'application/json' });
 
   const tipoLabel = {
-    empresa: 'Empresa', evento: 'Evento', fotos: 'Fotos e impressões', personalizado: 'Personalizado', 'nao-sei': 'Não sabe ainda',
+    placas: 'Placas e sinalização', adesivos: 'Adesivos e vinil', plotagem: 'Plotagem / grande formato',
+    fotos: 'Impressão de fotos', impressao: 'Impressão e cópias', grafica: 'Gráfica comercial',
+    acabamento: 'Encadernação e acabamentos', personalizados: 'Produtos personalizados',
+    arte: 'Criação / ajuste de arte', 'nao-sei': 'Não sabe ainda',
+    // pedidos antigos, de antes da lista de serviços real
+    empresa: 'Empresa (antigo)', evento: 'Evento (antigo)', personalizado: 'Personalizado (antigo)',
   };
   const ctaLabel = {
-    hero: 'Topo da página', empresa: 'Card "Para sua empresa"', evento: 'Card "Para seu evento"', fotos: 'Card "Impressões e fotos"',
-    personalizado: 'Card "Projetos personalizados"', portfolio: 'Portfólio', ajuda: '"Preciso de ajuda"', final: 'Fechamento / rodapé',
-    'form-continuar': 'Após enviar o formulário',
+    hero: 'Topo da página', placas: 'Placas e sinalização', adesivos: 'Adesivos em vinil',
+    plotagem: 'Plotagem / grande formato', fotos: 'Impressão de fotos', impressao: 'Impressão A4/A3',
+    grafica: 'Gráfica comercial', encadernacao: 'Encadernação e acabamentos', personalizados: 'Produtos personalizados',
+    arte: 'Criação / arquivos', portfolio: 'Portfólio', flutuante: 'Botão flutuante', maps: 'Google Maps',
+    final: 'Contato / rodapé', 'form-continuar': 'Após enviar o formulário',
+    // rótulos de antes da lista de serviços real
+    empresa: 'Empresa (antigo)', evento: 'Evento (antigo)', personalizado: 'Personalizado (antigo)', ajuda: 'Preciso de ajuda (antigo)',
   };
   const statusLabel = { novo: 'Novo', contatado: 'Contatado', orcado: 'Orçado', fechado: 'Fechado', perdido: 'Perdido', spam: 'Spam' };
 

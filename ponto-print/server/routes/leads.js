@@ -6,7 +6,20 @@ import { leadLimiter, hashIp, clean, diaHoje, visitanteHash, dispositivo } from 
 
 export const leadsRouter = Router();
 
-export const TIPOS = ['empresa', 'evento', 'fotos', 'personalizado', 'nao-sei'];
+// Precisa bater com o <select> em public/index.html, com o tipoLabel de
+// public/js/main.js e com o painel em public/admin/admin.js.
+export const TIPOS = [
+  'placas',
+  'adesivos',
+  'plotagem',
+  'fotos',
+  'impressao',
+  'grafica',
+  'acabamento',
+  'personalizados',
+  'arte',
+  'nao-sei',
+];
 
 // Telefone BR: aceita máscara, guarda só dígitos (DDD + número, com ou sem 55).
 const telefone = z
@@ -26,7 +39,7 @@ const schema = z.object({
     .or(z.literal(''))
     .transform((v) => (v ? v.toLowerCase() : null))
     .refine((v) => v === null || z.email().safeParse(v).success, 'E-mail inválido.'),
-  tipo: z.enum(TIPOS, { error: 'Escolha o tipo de material.' }),
+  tipo: z.enum(TIPOS, { error: 'Escolha o que você precisa.' }),
   quantidade: z
     .string()
     .transform(clean)
