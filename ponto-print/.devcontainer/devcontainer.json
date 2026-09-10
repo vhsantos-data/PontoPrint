@@ -1,14 +1,22 @@
 {
   "name": "Ponto Print",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
-  "forwardPorts": [3000],
+  "forwardPorts": [
+    3000
+  ],
   "portsAttributes": {
-    "3000": { "label": "Ponto Print", "onAutoForward": "notify" }
+    "3000": {
+      "label": "Ponto Print",
+      "onAutoForward": "openPreview"
+    }
   },
-  "postCreateCommand": "cp -n .env.example .env 2>/dev/null; npm install",
+  "postCreateCommand": "npm install && node scripts/preparar-env.mjs",
   "customizations": {
     "vscode": {
-      "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"]
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ]
     }
   },
   "remoteEnv": {

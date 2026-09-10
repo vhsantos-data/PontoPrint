@@ -45,14 +45,17 @@ scripts/gerar-og.mjs  regera a og.png a partir do design/og.html
 ## Rodando
 
 ```bash
-cp .env.example .env
-npm run gen:token   # cole em ADMIN_TOKEN
-npm run gen:token   # cole em IP_HASH_SALT
 npm install
-npm run dev         # http://localhost:3000  (recarrega ao salvar)
+node scripts/preparar-env.mjs   # cria o .env e mostra o token do painel
+npm run dev                     # http://localhost:3000 (recarrega ao salvar)
 ```
 
-Painel: `http://localhost:3000/admin` → cole o `ADMIN_TOKEN`.
+Painel: `http://localhost:3000/admin` → cole o `ADMIN_TOKEN` que o script
+mostrou (ou `grep ADMIN_TOKEN .env`).
+
+Sem `.env` o servidor sobe do mesmo jeito em desenvolvimento, com um token
+fraco e um aviso no terminal. Em produção ele se recusa a subir sem
+`ADMIN_TOKEN` (32+ caracteres) e `IP_HASH_SALT`.
 
 ## O que ajustar antes de publicar
 
@@ -135,14 +138,29 @@ Para medir campanhas, use links com `?utm_source=instagram` (ou `google`, `carta
 
 ## GitHub Codespaces
 
-O repositório já traz `.devcontainer/devcontainer.json` (Node 22, porta 3000, `.env` criado em modo desenvolvimento, `npm install` automático).
+O repositório traz `.devcontainer/devcontainer.json` (Node 22, porta 3000
+encaminhada, `npm install` e `.env` criados sozinhos).
 
-1. Suba os arquivos num repositório e abra **Code → Codespaces → Create codespace**.
-2. Quando o terminal aparecer, rode `npm run dev`.
-3. A aba **Ports** mostra a URL pública da porta 3000 (`https://…-3000.app.github.dev`). Para outra pessoa ver sem login no GitHub, clique com o botão direito na porta → **Port Visibility → Public**.
-4. Painel em `/admin` com o token que está no `.env` (o placeholder é aceito só em desenvolvimento).
+1. No GitHub: **Code → Codespaces → Create codespace** (escolha a branch).
+2. Espere o `postCreateCommand` terminar. Ele instala as dependências e roda
+   `node scripts/preparar-env.mjs`, que cria o `.env` já com `ADMIN_TOKEN` e
+   `IP_HASH_SALT` gerados. **O token do painel aparece no terminal** — copie,
+   ou leia depois com `grep ADMIN_TOKEN .env`.
+3. Rode o servidor:
+   ```bash
+   npm run dev
+   ```
+4. A porta 3000 é encaminhada automaticamente e o Codespace abre a prévia.
+   Se não abrir, vá na aba **Ports** e clique no ícone de globo da porta 3000.
+5. Painel em `/admin` — cole o token do passo 2.
 
-Se abrir sem o devcontainer (imagem padrão), confira `node -v`: precisa ser 22.13+. Se não for: `nvm install 22 && nvm use 22`.
+**Para outra pessoa ver o site** (cliente, por exemplo): aba **Ports** → clique
+com o botão direito na porta 3000 → **Port Visibility → Public**. Sem isso, a
+URL pede login do GitHub. Lembre de voltar para Private depois.
+
+Se abrir sem o devcontainer (imagem padrão), confira `node -v`: precisa ser
+22.13+. Se não for: `nvm install 22 && nvm use 22`. E rode
+`node scripts/preparar-env.mjs` na mão antes do `npm run dev`.
 
 ## Deploy
 
