@@ -1,11 +1,26 @@
 # Ponto Print — site + API de orçamentos
 
-Landing page de rolagem contínua (hero → materiais → diferenciais → portfólio → ajuda → como funciona → FAQ → orçamento) com CTAs de WhatsApp contextuais, formulário que grava no banco e notifica, métricas próprias de visita (sem cookies) e um painel para acompanhar visitas, cliques e pedidos.
+Landing page de rolagem contínua (hero → serviços em destaque → lista completa → diferenciais → portfólio → público e região → como funciona → FAQ → contato) com CTAs de WhatsApp contextuais, formulário que grava no banco e notifica, métricas próprias de visita (sem cookies) e um painel para acompanhar visitas, cliques e pedidos.
+
+O WhatsApp **(11) 91969-3833** é o canal principal de conversão: cada botão da página abre a conversa já com a mensagem do contexto onde foi clicado, e o formulário termina oferecendo continuar no WhatsApp com o pedido preenchido.
+
+> **Antes de publicar, leia [PENDENCIAS.md](PENDENCIAS.md).** Domínio, e-mail de
+> pedidos, logo vetorial e fotos reais dos trabalhos ainda dependem de
+> confirmação. O que não foi confirmado não aparece no site em vez de aparecer
+> errado.
+
+## Identidade
+
+Fundo branco, preto como cor principal e CMYK (ciano, magenta, amarelo) em uso
+pontual: filetes finos, marcações de seção e realces. Tipografia da marca é a
+**Objektiva**; como é licenciada, a web carrega **Archivo** como substituta
+próxima e passa a usar a Objektiva sozinha se ela estiver instalada ou for
+auto-hospedada (ver topo do `public/css/styles.css`).
 
 ## Stack
 
 - **Backend:** Node 22+ e Express 5. Banco SQLite embutido no Node (`node:sqlite`) — sem dependência nativa, sem servidor de banco.
-- **Frontend:** HTML, CSS e JS puros, sem build. Fonte Bricolage Grotesque (Google Fonts).
+- **Frontend:** HTML, CSS e JS puros, sem build. Fonte Archivo (Google Fonts), com Objektiva na frente da pilha.
 - **Deploy:** `npm start`, PM2 ou Docker (Dockerfile e compose inclusos).
 
 ```
@@ -21,29 +36,60 @@ server/
 public/
   index.html, css/styles.css, js/main.js, js/config.js
   admin/              painel de pedidos (token)
+  assets/og.png       imagem de compartilhamento (1200x630)
   assets/portfolio/   placeholders — trocar por fotos reais
+design/og.html        arte da og.png, em HTML/CSS
+scripts/gerar-og.mjs  regera a og.png a partir do design/og.html
 ```
 
 ## Rodando
 
 ```bash
-cp .env.example .env
-npm run gen:token   # cole em ADMIN_TOKEN
-npm run gen:token   # cole em IP_HASH_SALT
 npm install
-npm run dev         # http://localhost:3000  (recarrega ao salvar)
+node scripts/preparar-env.mjs   # cria o .env e mostra o token do painel
+npm run dev                     # http://localhost:3000 (recarrega ao salvar)
 ```
 
-Painel: `http://localhost:3000/admin` → cole o `ADMIN_TOKEN`.
+Painel: `http://localhost:3000/admin` → cole o `ADMIN_TOKEN` que o script
+mostrou (ou `grep ADMIN_TOKEN .env`).
+
+Sem `.env` o servidor sobe do mesmo jeito em desenvolvimento, com um token
+fraco e um aviso no terminal. Em produção ele se recusa a subir sem
+`ADMIN_TOKEN` (32+ caracteres) e `IP_HASH_SALT`.
 
 ## O que ajustar antes de publicar
 
-1. **`public/js/config.js`** — número do WhatsApp (só dígitos, com 55), Instagram, endereço, horário e as mensagens pré-preenchidas de cada botão.
-2. **`public/index.html`** — trocar `pontoprint.com.br` nas metas/canonical/JSON-LD pelo domínio real; conferir textos do FAQ (prazo, pagamento, entrega são suposições razoáveis, não regras da loja).
-3. **`public/assets/portfolio/*.svg`** — substituir por fotos reais (JPG/WebP ~1200px, 4:3). Manter o `alt` descritivo.
-4. **`public/assets/og.png`** — criar imagem 1200×630 para compartilhamento (WhatsApp/Instagram usam).
-5. **`.env`** — `PUBLIC_URL`, `TRUST_PROXY=1` se estiver atrás de Nginx/Caddy/Cloudflare/Railway, e as notificações que quiser.
-6. Ao alterar CSS/JS em produção, troque o `?v=1` nos links do HTML (cache de 1 dia nos estáticos).
+A lista completa, com o motivo de cada pendência, está em
+**[PENDENCIAS.md](PENDENCIAS.md)**. Resumo:
+
+1. **`public/js/config.js`** — é o único arquivo que a Ponto Print precisa editar
+   no dia a dia: WhatsApp, endereço, horário, e-mail, redes, CNPJ, razão social,
+   link do mapa e as mensagens de cada botão. Campo vazio (`''`) some da página.
+2. **Domínio** — trocar `pontoprint.com.br` em metas, JSON-LD, `sitemap.xml` e
+   `robots.txt` (há um comando pronto no PENDENCIAS.md).
+3. **`public/assets/portfolio/*.svg`** — substituir pelos trabalhos reais
+   (JPG/WebP ~1200px, 4:3). Manter o `alt` descritivo.
+4. **`public/assets/og.png`** — já existe uma arte tipográfica; a definitiva leva
+   foto de trabalho real. Editar `design/og.html` e rodar `node scripts/gerar-og.mjs`.
+5. **FAQ** — as respostas de pagamento e entrega estão propositalmente abertas
+   ("confirmamos no atendimento"). Fechar o texto quando a política for definida.
+6. **`.env`** — `PUBLIC_URL`, `TRUST_PROXY=1` se estiver atrás de
+   Nginx/Caddy/Cloudflare/Railway, e as notificações que quiser.
+7. Ao alterar CSS/JS em produção, troque o `?v=3` nos links do HTML (cache de 1
+   dia nos estáticos).
+
+## Serviços e tipos de pedido
+
+O `<select>` do formulário, o `TIPOS` de `server/routes/leads.js`, o `tipoLabel`
+de `public/js/main.js` e o do painel precisam andar juntos. Hoje são:
+`placas`, `adesivos`, `plotagem`, `fotos`, `impressao`, `grafica`, `acabamento`,
+`personalizados`, `arte`, `nao-sei`. Pedidos antigos (`empresa`, `evento`,
+`personalizado`) continuam aparecendo no painel marcados como "(antigo)".
+
+O site não afirma produção própria de offset industrial, UV, látex, solvente,
+grandes tiragens, verniz localizado ou laminação soft touch — há um aviso de
+transparência dizendo que parte dos acabamentos especiais é feita com parceiros.
+Manter assim ao editar textos.
 
 ## API
 
@@ -92,14 +138,40 @@ Para medir campanhas, use links com `?utm_source=instagram` (ou `google`, `carta
 
 ## GitHub Codespaces
 
-O repositório já traz `.devcontainer/devcontainer.json` (Node 22, porta 3000, `.env` criado em modo desenvolvimento, `npm install` automático).
+O `.devcontainer/devcontainer.json` fica na **raiz do repositório** (é onde o
+Codespaces procura), apontando para esta pasta: Node 22, porta 3000
+encaminhada, `npm install` e `.env` criados sozinhos.
 
-1. Suba os arquivos num repositório e abra **Code → Codespaces → Create codespace**.
-2. Quando o terminal aparecer, rode `npm run dev`.
-3. A aba **Ports** mostra a URL pública da porta 3000 (`https://…-3000.app.github.dev`). Para outra pessoa ver sem login no GitHub, clique com o botão direito na porta → **Port Visibility → Public**.
-4. Painel em `/admin` com o token que está no `.env` (o placeholder é aceito só em desenvolvimento).
+1. No GitHub: **Code → Codespaces → Create codespace** (escolha a branch).
+2. O terminal já abre em `ponto-print/`. Espere o `postCreateCommand`
+   terminar: ele instala as dependências e roda
+   `node scripts/preparar-env.mjs`, que cria o `.env` já com `ADMIN_TOKEN` e
+   `IP_HASH_SALT` gerados. **O token do painel aparece no terminal** — copie,
+   ou leia depois com `grep ADMIN_TOKEN .env`.
+3. Rode o servidor:
+   ```bash
+   npm run dev
+   ```
+4. A porta 3000 é encaminhada automaticamente e o Codespace abre a prévia.
+   Se não abrir, vá na aba **Ports** e clique no ícone de globo da porta 3000.
+5. Painel em `/admin` — cole o token do passo 2.
 
-Se abrir sem o devcontainer (imagem padrão), confira `node -v`: precisa ser 22.13+. Se não for: `nvm install 22 && nvm use 22`.
+**Para outra pessoa ver o site** (cliente, por exemplo): aba **Ports** → clique
+com o botão direito na porta 3000 → **Port Visibility → Public**. Sem isso, a
+URL pede login do GitHub. Lembre de voltar para Private depois.
+
+Se o Codespace abrir **sem** o devcontainer (imagem padrão), o terminal começa
+na raiz do repositório, onde não há `package.json` — `npm run dev` falha com
+`ENOENT`. Nesse caso:
+
+```bash
+cd ponto-print
+node -v                          # precisa ser 22.13+
+                                 # se não for: nvm install 22 && nvm use 22
+npm install
+node scripts/preparar-env.mjs
+npm run dev
+```
 
 ## Deploy
 

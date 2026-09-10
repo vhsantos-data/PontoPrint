@@ -1,1 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600"><rect width="800" height="600" fill="#ffd43b"/><rect x="40" y="40" width="720" height="520" fill="none" stroke="#1b1b1b" stroke-opacity=".35" stroke-width="3" stroke-dasharray="14 10"/><text x="400" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="40" font-weight="700" fill="#1b1b1b">Adesivos</text><text x="400" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#1b1b1b" fill-opacity=".7">foto de exemplo — substituir</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="adesivo recortado em vinil">
+  <title>Adesivos em vinil — imagem de exemplo</title>
+  <rect width="800" height="600" fill="#ffffff"/>
+  <rect x="0" y="0" width="800" height="10" fill="#00aeef"/>
+  <rect x="200" y="0" width="200" height="10" fill="#ec008c"/>
+  <rect x="400" y="0" width="200" height="10" fill="#ffe600"/>
+  <rect x="600" y="0" width="200" height="10" fill="#0e0e0e"/>
+  <rect x="46" y="56" width="708" height="498" fill="none" stroke="#0e0e0e" stroke-opacity=".28" stroke-width="2" stroke-dasharray="12 9"/>
+  <g fill="none" stroke="#0e0e0e" stroke-opacity=".5" stroke-width="2">
+    <path d="M46 86V56h30M754 86V56h-30M46 524v30h30M754 524v30h-30"/>
+  </g>
+  <text x="400" y="292" text-anchor="middle" font-family="Archivo, Helvetica, Arial, sans-serif" font-size="40" font-weight="700" fill="#0e0e0e">Adesivos em vinil</text>
+  <text x="400" y="336" text-anchor="middle" font-family="Archivo, Helvetica, Arial, sans-serif" font-size="21" fill="#55565a">imagem de exemplo — substituir por foto real</text>
+  <g transform="translate(352 372)">
+    <rect width="24" height="10" fill="#00aeef"/><rect x="24" width="24" height="10" fill="#ec008c"/>
+    <rect x="48" width="24" height="10" fill="#ffe600"/><rect x="72" width="24" height="10" fill="#0e0e0e"/>
+  </g>
+</svg>

@@ -3,252 +3,574 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ponto Print — Impressão e personalização em Osasco</title>
-  <meta name="description" content="Cartões, panfletos, banners, convites, adesivos, fotos e projetos personalizados. Você manda a ideia, a Ponto Print imprime com qualidade e acabamento. Peça seu orçamento pelo WhatsApp.">
-  <meta name="theme-color" content="#2E6A50">
+
+  <!-- ===================================================================
+       DOMÍNIO A CONFIRMAR. Enquanto o domínio real não for definido,
+       "pontoprint.com.br" é só um marcador. Ao fechar o domínio, troque
+       em: canonical, og:url, og:image, JSON-LD, sitemap.xml e robots.txt.
+       Há um comando pronto no PENDENCIAS.md.
+       =================================================================== -->
+
+  <title>Ponto Print — Gráfica rápida em Osasco | Placas, adesivos, plotagem e impressões</title>
+  <meta name="description" content="Gráfica em Osasco: placas de sinalização em PS 2 mm, adesivos em vinil, plotagem A2/A1/A0, impressão de fotos, cópias A4 e A3, cartões, banners, encadernação e personalizados. Orçamento pelo WhatsApp.">
+  <meta name="theme-color" content="#0e0e0e">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="canonical" href="https://pontoprint.com.br/">
 
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ponto Print">
   <meta property="og:title" content="Ponto Print — Impressão que dá vida às suas ideias">
-  <meta property="og:description" content="Impressão, personalização e comunicação visual em Osasco. Orçamento rápido pelo WhatsApp.">
+  <meta property="og:description" content="Placas, adesivos, plotagem, impressões e personalizados em Osasco. Orçamento rápido pelo WhatsApp.">
   <meta property="og:url" content="https://pontoprint.com.br/">
   <meta property="og:image" content="https://pontoprint.com.br/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css?v=2">
+  <!-- Tipografia da marca é a Objektiva (licenciada). Archivo entra como
+       substituta próxima na web; ver nota no topo do styles.css. -->
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=3">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id": "https://pontoprint.com.br/#loja",
     "name": "Ponto Print",
-    "description": "Gráfica e papelaria: impressão, personalização e comunicação visual.",
+    "description": "Gráfica rápida em Osasco: placas de sinalização, adesivos em vinil, plotagem e grandes formatos, impressões, gráfica comercial, encadernação e produtos personalizados.",
     "url": "https://pontoprint.com.br/",
-    "address": { "@type": "PostalAddress", "addressLocality": "Osasco", "addressRegion": "SP", "addressCountry": "BR" },
-    "areaServed": "Osasco e região",
-    "priceRange": "$$"
+    "image": "https://pontoprint.com.br/assets/og.png",
+    "telephone": "+5511919693833",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Hilário Pereira de Souza, 492",
+      "addressLocality": "Osasco",
+      "addressRegion": "SP",
+      "addressCountry": "BR"
+    },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    }],
+    "areaServed": [
+      { "@type": "City", "name": "Osasco" },
+      { "@type": "AdministrativeArea", "name": "Grande São Paulo" }
+    ],
+    "priceRange": "$$",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Serviços da Ponto Print",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Placas de sinalização personalizadas em PS 2 mm" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Adesivos em vinil e etiquetas adesivas" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Plotagem A2, A1, A0 e impressão em grande formato" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Impressão fotográfica" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Impressão e cópias A4 e A3, coloridas e preto e branco" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gráfica comercial: cartões de visita, panfletos, folders e convites" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Encadernação espiral, Wire-O, plastificação e acabamentos" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Produtos personalizados: canecas, camisetas, cadernos e brindes" } }
+      ]
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Vocês fazem a arte?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. A Ponto Print pode desenvolver ou ajustar a arte necessária para a produção. Dependendo da complexidade do projeto, a criação pode ser cobrada separadamente. Em pedidos maiores ou campanhas específicas, a criação pode ser oferecida como cortesia comercial." } },
+      { "@type": "Question", "name": "Qual é o prazo de produção?", "acceptedAnswer": { "@type": "Answer", "text": "Depende do produto, da quantidade e do acabamento. Impressões simples normalmente têm produção rápida. Produtos personalizados, comunicação visual, placas, grandes quantidades ou serviços feitos com parceiros podem exigir prazo maior. O prazo exato é informado no orçamento." } },
+      { "@type": "Question", "name": "Existe quantidade mínima?", "acceptedAnswer": { "@type": "Answer", "text": "Depende do produto. Em vários serviços de impressão não há quantidade mínima relevante. Produtos personalizados e serviços feitos com parceiros podem ter quantidade mínima específica. Consulte pelo WhatsApp." } },
+      { "@type": "Question", "name": "Posso mandar meu arquivo pelo WhatsApp?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O WhatsApp é um dos principais canais de atendimento da Ponto Print e pode ser usado para envio de arquivos, pedido de orçamento e alinhamento do pedido." } },
+      { "@type": "Question", "name": "Vocês imprimem em qualquer material?", "acceptedAnswer": { "@type": "Answer", "text": "Não. Cada impressora e cada processo têm materiais compatíveis específicos. A equipe avalia arquivo, tamanho, material e finalidade antes de confirmar a produção." } },
+      { "@type": "Question", "name": "Vocês fazem entrega?", "acceptedAnswer": { "@type": "Answer", "text": "A Ponto Print trabalha principalmente com retirada local, em Osasco. Dependendo do pedido e da localização, a possibilidade de envio ou entrega pode ser avaliada no orçamento." } },
+      { "@type": "Question", "name": "É necessário pagar sinal?", "acceptedAnswer": { "@type": "Answer", "text": "Para determinados trabalhos personalizados, de maior valor ou produzidos sob encomenda, pode ser solicitado pagamento antecipado ou sinal antes da produção. A condição é informada no orçamento." } }
+    ]
   }
   </script>
 </head>
 <body>
-  <a class="skip" href="#imprimir">Pular para o conteúdo</a>
+  <a class="skip" href="#servicos">Pular para o conteúdo</a>
+
+  <!-- ícones reaproveitados na página -->
+  <svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
+    <symbol id="i-wa" viewBox="0 0 24 24">
+      <path d="M12.04 2A9.9 9.9 0 0 0 2.1 11.9c0 1.75.46 3.46 1.34 4.96L2 22l5.28-1.38a9.9 9.9 0 0 0 4.76 1.21h.01a9.9 9.9 0 0 0 9.9-9.9A9.9 9.9 0 0 0 12.04 2Zm0 18.13h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.13.82.84-3.05-.2-.31a8.2 8.2 0 1 1 6.98 3.87Zm4.5-6.15c-.25-.12-1.46-.72-1.68-.8-.23-.09-.39-.13-.55.12-.16.25-.64.8-.78.97-.14.16-.29.18-.53.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.55-1.34-.76-1.83-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.43.06-.65.31-.22.25-.85.83-.85 2.03s.88 2.35 1 2.51c.12.16 1.73 2.65 4.2 3.72.59.25 1.05.4 1.4.52.59.19 1.12.16 1.55.1.47-.07 1.46-.6 1.66-1.17.21-.58.21-1.07.14-1.17-.06-.11-.22-.17-.46-.29Z"/>
+    </symbol>
+  </svg>
 
   <header class="top">
     <a class="brand" href="/" aria-label="Ponto Print — início">
       <span>Ponto</span><i class="brand__dot" aria-hidden="true"></i><span>Print</span>
     </a>
     <button class="top__menu" type="button" aria-expanded="false" aria-controls="nav">
-      <span class="sr">Menu</span>
+      <span class="sr">Abrir menu</span>
       <i aria-hidden="true"></i>
     </button>
     <nav class="top__nav" id="nav">
-      <a href="#imprimir">O que imprimimos</a>
+      <a href="#servicos">Serviços</a>
       <a href="#trabalhos">Trabalhos</a>
       <a href="#como-funciona">Como funciona</a>
       <a href="#duvidas">Dúvidas</a>
-      <a class="btn btn--sm" data-wa="hero" href="#orcamento">Pedir orçamento</a>
+      <a href="#contato">Contato</a>
+      <a class="btn btn--sm" data-wa="hero" href="#contato"><svg aria-hidden="true"><use href="#i-wa"></use></svg>Orçamento</a>
     </nav>
   </header>
 
   <main>
-    <!-- HERO -->
+    <!-- ================= HERO ================= -->
     <section class="hero" aria-labelledby="hero-title">
-      <div class="ruler" aria-hidden="true"></div>
       <div class="hero__inner">
         <div class="hero__text">
-          <h1 id="hero-title">Impressão que dá vida às suas ideias.</h1>
-          <p class="lead">Da comunicação da sua empresa aos detalhes do seu evento, a Ponto Print transforma projetos em materiais com qualidade, acabamento e personalidade.</p>
+          <p class="hero__eyebrow">Gráfica rápida em Osasco</p>
+          <h1 id="hero-title">Impressão que dá vida às <span class="hl">suas ideias</span>.</h1>
+          <p class="lead">Placas, adesivos, plotagem, impressões e personalizados. Você manda a ideia pelo WhatsApp e a gente resolve — com atendimento direto, produção ágil e acabamento sob medida.</p>
           <div class="hero__actions">
-            <a class="btn btn--lg" data-wa="hero" href="#orcamento">Pedir orçamento no WhatsApp</a>
-            <a class="link" href="#trabalhos">Ver o que já imprimimos</a>
+            <a class="btn btn--lg" data-wa="hero" href="#contato"><svg aria-hidden="true"><use href="#i-wa"></use></svg>Pedir orçamento no WhatsApp</a>
+            <a class="link" href="#servicos">Ver todos os serviços</a>
           </div>
-          <ul class="chips" aria-label="O que fazemos">
-            <li>Impressão</li>
-            <li>Personalização</li>
-            <li>Comunicação visual</li>
-            <li>Acabamentos</li>
+          <ul class="chips" aria-label="Resumo do atendimento">
+            <li>Osasco — região central</li>
+            <li>Seg a sex, 8h às 18h</li>
+            <li>Orçamento pelo WhatsApp</li>
+            <li>Arquivo direto no chat</li>
           </ul>
         </div>
 
-        <!-- Leque de amostras de papel: o objeto mais reconhecível de uma gráfica -->
+        <!-- amostras dos materiais que a loja realmente trabalha -->
         <div class="fan" aria-hidden="true">
+          <div class="fan__card fan__card--ps"><span>PS 2 mm</span></div>
+          <div class="fan__card fan__card--vinil"><span>Vinil adesivo</span></div>
+          <div class="fan__card fan__card--lona"><span>Lona</span></div>
+          <div class="fan__card fan__card--foto"><span>Fotográfico</span></div>
           <div class="fan__card fan__card--offset"><span>Offset 90g</span></div>
-          <div class="fan__card fan__card--kraft"><span>Kraft 240g</span></div>
-          <div class="fan__card fan__card--foto"><span>Fotográfico brilho</span></div>
-          <div class="fan__card fan__card--adesivo"><span>Adesivo vinil</span></div>
-          <div class="fan__card fan__card--couche"><span>Couché 300g</span></div>
           <i class="fan__pin"></i>
         </div>
       </div>
     </section>
 
-    <!-- O QUE VOCÊ PRECISA IMPRIMIR -->
-    <section class="section" id="imprimir" aria-labelledby="imprimir-title">
-      <div class="sheet">
-        <h2 id="imprimir-title">O que você precisa imprimir?</h2>
-        <p class="sub">Escolha o caminho mais parecido com o seu. Cada material da lista abaixo pode ser adaptado ao seu tamanho, papel e quantidade.</p>
+    <!-- ================= SERVIÇOS EM DESTAQUE ================= -->
+    <section class="section section--alt" id="servicos" aria-labelledby="serv-title">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="kicker">Mais procurados</p>
+          <h2 id="serv-title">O que a Ponto Print faz todo dia</h2>
+          <p class="sub">Estes são os serviços com maior procura. Cada um sai no tamanho, no material e na quantidade que o seu projeto pedir.</p>
+        </div>
 
-        <div class="materials">
-          <article class="mat mat--empresa">
-            <h3>Para sua empresa</h3>
-            <p>Cartões de visita, panfletos, adesivos, banners, placas e materiais promocionais.</p>
-            <a class="btn btn--ink btn--sm" data-wa="empresa" href="#orcamento">Quero para minha empresa</a>
-            <i class="cmyk" aria-hidden="true"></i>
+        <div class="feats">
+          <article class="feat feat--hero">
+            <i class="feat__rank" aria-hidden="true"></i>
+            <svg class="feat__ico" viewBox="0 0 40 40" aria-hidden="true">
+              <rect x="5" y="7" width="30" height="20" rx="2"/><path d="M20 27v7M14 34h12"/><path d="M11 14h18M11 20h11"/>
+            </svg>
+            <h3>Placas e sinalização personalizada</h3>
+            <p>Placas comerciais, informativas, de identificação e sinalização interna e externa — o carro-chefe da casa, principalmente em PS 2 mm.</p>
+            <ul class="feat__list">
+              <li>PS 2 mm</li><li>Placa de empresa</li><li>Placa informativa</li><li>Sinalização de condomínio</li><li>Placa personalizada</li>
+            </ul>
+            <a class="btn btn--sm" data-wa="placas" href="#contato"><svg aria-hidden="true"><use href="#i-wa"></use></svg>Orçar placa</a>
           </article>
 
-          <article class="mat mat--evento">
-            <h3>Para seu evento</h3>
-            <p>Convites, tags, lembranças, menus, placas e itens personalizados para casamentos, aniversários e festas.</p>
-            <a class="btn btn--ink btn--sm" data-wa="evento" href="#orcamento">Quero para meu evento</a>
+          <article class="feat feat--wide">
+            <i class="feat__rank" aria-hidden="true"></i>
+            <svg class="feat__ico" viewBox="0 0 40 40" aria-hidden="true">
+              <path d="M7 9h20l6 6v16H7z"/><path d="M27 9v6h6"/><path d="M13 22h12M13 27h8"/>
+            </svg>
+            <h3>Adesivos em vinil</h3>
+            <p>Adesivo de recorte, etiquetas, comunicação de vitrine e identificação para lojas, empresas, eventos e uso pessoal.</p>
+            <ul class="feat__list">
+              <li>Vinil recortado</li><li>Etiquetas adesivas</li><li>Vitrine</li><li>Identificação</li>
+            </ul>
+            <a class="btn btn--sm" data-wa="adesivos" href="#contato"><svg aria-hidden="true"><use href="#i-wa"></use></svg>Orçar adesivo</a>
           </article>
 
-          <article class="mat mat--fotos">
-            <div class="mat__photo">
-              <h3>Impressões e fotos</h3>
-              <p>Fotografias, ampliações, impressões de alta qualidade e materiais personalizados com suas imagens.</p>
-            </div>
-            <a class="btn btn--ink btn--sm" data-wa="fotos" href="#orcamento">Quero imprimir</a>
+          <article class="feat">
+            <svg class="feat__ico" viewBox="0 0 40 40" aria-hidden="true">
+              <path d="M6 12h28v18H6z"/><path d="M6 12l6-5h16l6 5"/><path d="M12 21h16"/>
+            </svg>
+            <h3>Plotagem e grandes formatos</h3>
+            <p>A2, A1, A0 e bobina: plantas, projetos, pôsteres e impressões grandes.</p>
+            <a class="btn btn--sm btn--ghost" data-wa="plotagem" href="#contato">Orçar plotagem</a>
           </article>
 
-          <article class="mat mat--custom">
-            <h3>Projetos personalizados</h3>
-            <p>Tem uma ideia diferente? Desenvolvemos a solução de impressão de acordo com o seu projeto.</p>
-            <a class="btn btn--ink btn--sm" data-wa="personalizado" href="#orcamento">Falar com a Ponto Print</a>
+          <article class="feat">
+            <svg class="feat__ico" viewBox="0 0 40 40" aria-hidden="true">
+              <rect x="5" y="10" width="30" height="22" rx="2"/><circle cx="20" cy="21" r="6"/><path d="M13 10l3-4h8l3 4"/>
+            </svg>
+            <h3>Impressão de fotos</h3>
+            <p>Fotos, ampliações e impressão em papéis fotográficos e especiais.</p>
+            <a class="btn btn--sm btn--ghost" data-wa="fotos" href="#contato">Imprimir fotos</a>
+          </article>
+
+          <article class="feat">
+            <svg class="feat__ico" viewBox="0 0 40 40" aria-hidden="true">
+              <path d="M11 15V6h18v9"/><rect x="6" y="15" width="28" height="12" rx="2"/><path d="M11 27h18v7H11z"/>
+            </svg>
+            <h3>Impressão rápida A4 e A3</h3>
+            <p>Cópias e impressões coloridas ou preto e branco, inclusive em papéis especiais.</p>
+            <a class="btn btn--sm btn--ghost" data-wa="impressao" href="#contato">Imprimir agora</a>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- DIFERENCIAIS -->
-    <section class="section section--onmat" aria-labelledby="dif-title">
+    <!-- ================= LISTA COMPLETA ================= -->
+    <section class="section" aria-labelledby="lista-title">
       <div class="wrap">
-        <h2 id="dif-title" class="onmat">Não é só imprimir. É entregar o resultado que você imaginou.</h2>
+        <div class="sec-head">
+          <p class="kicker">Lista completa</p>
+          <h2 id="lista-title">Tudo o que sai da Ponto Print</h2>
+          <p class="sub">Se o que você procura não estiver na lista, pergunte assim mesmo: boa parte dos pedidos começa com “será que vocês fazem isso?”.</p>
+        </div>
+
+        <div class="cats">
+          <article class="cat">
+            <h3>Impressões e cópias</h3>
+            <ul>
+              <li>Impressão A4 e A3</li>
+              <li>Colorida e preto e branco</li>
+              <li>Impressão de documentos</li>
+              <li>Impressão fotográfica</li>
+              <li>Papéis especiais</li>
+              <li>Papel glossy, offset e vergê</li>
+            </ul>
+            <a class="link" data-wa="impressao" href="#contato">Pedir no WhatsApp</a>
+          </article>
+
+          <article class="cat">
+            <h3>Plotagem e grandes formatos</h3>
+            <ul>
+              <li>Plotagem A2, A1 e A0</li>
+              <li>Impressões em bobina</li>
+              <li>Plantas e projetos</li>
+              <li>Pôsteres</li>
+              <li>Impressões em grande formato</li>
+            </ul>
+            <a class="link" data-wa="plotagem" href="#contato">Pedir no WhatsApp</a>
+          </article>
+
+          <article class="cat">
+            <h3>Comunicação visual</h3>
+            <ul>
+              <li>Placas de sinalização</li>
+              <li>Placas em PS 2 mm</li>
+              <li>Banners e lonas</li>
+              <li>Wind banners</li>
+              <li>Adesivos e adesivos em vinil</li>
+              <li>Etiquetas adesivas</li>
+              <li>Comunicação para vitrines</li>
+              <li>Sinalização interna e externa</li>
+            </ul>
+            <a class="link" data-wa="placas" href="#contato">Pedir no WhatsApp</a>
+          </article>
+
+          <article class="cat">
+            <h3>Gráfica comercial</h3>
+            <ul>
+              <li>Cartões de visita</li>
+              <li>Panfletos, flyers e folders</li>
+              <li>Certificados e convites</li>
+              <li>Papel timbrado</li>
+              <li>Tags e etiquetas</li>
+              <li>Talões numerados</li>
+              <li>Blocos personalizados</li>
+            </ul>
+            <a class="link" data-wa="grafica" href="#contato">Pedir no WhatsApp</a>
+          </article>
+
+          <article class="cat">
+            <h3>Encadernação e acabamentos</h3>
+            <ul>
+              <li>Encadernação espiral e Wire-O</li>
+              <li>Plastificação e laminação</li>
+              <li>Corte e furação</li>
+              <li>Montagem de capas</li>
+              <li>Cadernos e agendas personalizadas</li>
+              <li>Livros e materiais com capa dura</li>
+            </ul>
+            <a class="link" data-wa="encadernacao" href="#contato">Pedir no WhatsApp</a>
+          </article>
+
+          <article class="cat">
+            <h3>Produtos personalizados</h3>
+            <ul>
+              <li>Canecas e azulejos</li>
+              <li>Camisetas (DTF em peças coloridas)</li>
+              <li>Cadernos e agendas</li>
+              <li>Lembrancinhas e brindes</li>
+              <li>Produtos por sublimação</li>
+              <li>Personalização de peças em poliéster</li>
+            </ul>
+            <a class="link" data-wa="personalizados" href="#contato">Pedir no WhatsApp</a>
+          </article>
+
+          <article class="cat">
+            <h3>Criação e arquivos</h3>
+            <ul>
+              <li>Criação de artes</li>
+              <li>Ajuste de arquivos</li>
+              <li>Diagramação</li>
+              <li>Preparação de arquivos para impressão</li>
+              <li>Desenvolvimento de materiais gráficos</li>
+            </ul>
+            <a class="link" data-wa="arte" href="#contato">Pedir no WhatsApp</a>
+          </article>
+        </div>
+
+        <p class="note">
+          <strong>Transparência sobre o que é produzido aqui.</strong>
+          Parte dos trabalhos sai da nossa produção; alguns materiais e acabamentos especiais são feitos com parceiros de confiança, conforme o processo exigido. Isso não muda o seu atendimento: você fala com a Ponto Print do orçamento à entrega, e a gente avalia cada pedido caso a caso antes de confirmar prazo e valor.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= DIFERENCIAIS ================= -->
+    <section class="section section--ink" aria-labelledby="dif-title">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="kicker">Por que a Ponto Print</p>
+          <h2 id="dif-title">Não é só imprimir. É resolver o que você precisa.</h2>
+        </div>
         <ul class="difs">
-          <li>
-            <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4c4 6 8 10 8 15a8 8 0 0 1-16 0c0-5 4-9 8-15z"/><path d="M12 19a4 4 0 0 0 4 4"/></svg>
-            <h3>Qualidade de impressão</h3>
-            <p>Cores, definição e acabamento para valorizar seu material.</p>
-          </li>
           <li>
             <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 7h18v12H12l-5 4v-4H5z"/><path d="M27 12v10h-3"/></svg>
             <h3>Atendimento próximo</h3>
-            <p>Você fala diretamente com quem entende do seu projeto.</p>
+            <p>Contato direto pelo WhatsApp para orçar, mandar arquivo e acompanhar o pedido — sem formulário eterno e sem robô.</p>
+          </li>
+          <li>
+            <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M17 3 6 19h8l-1 10 11-16h-8z"/></svg>
+            <h3>Agilidade</h3>
+            <p>Foco em gráfica rápida: muitos materiais saem em prazo curto, do documento impresso à placa pronta.</p>
           </li>
           <li>
             <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 22 22 4l6 6L10 28H4z"/><path d="M9 17l3 3M13 13l3 3M17 9l3 3"/></svg>
-            <h3>Produção personalizada</h3>
-            <p>Tamanho, papel, acabamento e quantidade ajustados ao que você precisa.</p>
+            <h3>Soluções sob medida</h3>
+            <p>Da impressão simples ao projeto completo de comunicação visual, ajustado ao seu tamanho, material e quantidade.</p>
           </li>
           <li>
-            <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 8h10v10H4z"/><path d="M14 13h5"/><path d="M19 10l4 3-4 3"/><path d="M23 6l3 3-3 3M23 18h5v8h-9v-8"/></svg>
-            <h3>Do projeto ao produto final</h3>
-            <p>Você traz a ideia. A Ponto Print ajuda a transformar em algo real.</p>
+            <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 8h10v10H4zM18 8h10v10H18zM4 22h10v6H4zM18 22h10v6H18z"/></svg>
+            <h3>Variedade de serviços</h3>
+            <p>Impressões, placas, adesivos, grandes formatos, acabamentos e personalizados num único atendimento.</p>
           </li>
         </ul>
+        <p class="difs__claim">Agilidade, atendimento próximo e soluções gráficas sob medida para pessoas e empresas.</p>
       </div>
     </section>
 
-    <!-- PORTFÓLIO -->
-    <section class="section section--onmat" id="trabalhos" aria-labelledby="trab-title">
+    <!-- ================= PORTFÓLIO ================= -->
+    <section class="section" id="trabalhos" aria-labelledby="trab-title">
       <div class="wrap">
-        <h2 id="trab-title" class="onmat">Veja o que já saiu da nossa impressora.</h2>
+        <div class="sec-head">
+          <p class="kicker">Trabalhos</p>
+          <h2 id="trab-title">Veja o que já saiu daqui</h2>
+          <p class="sub">Uma amostra do que a Ponto Print produz para moradores, empresas e eventos da região.</p>
+        </div>
         <!--
-          Substitua os SVGs de exemplo por fotos reais (JPG/WebP, ~1200px de largura, proporção 4:3).
-          Mantenha o alt descrevendo o material: ajuda em acessibilidade e no Google.
+          ATENÇÃO: as imagens abaixo ainda são placeholders.
+          Trocar por FOTOS REAIS de trabalhos da Ponto Print — no mínimo 8,
+          horizontais (~4:3), boa luz e fundo limpo. Formato JPG ou WebP,
+          ~1200px de largura. Manter o texto do alt descrevendo o material:
+          ele conta para acessibilidade e para o Google.
+          Sugestões que ainda faltam cobrir: encadernações e camisetas.
         -->
         <div class="works">
-          <figure class="work"><img src="/assets/portfolio/cartoes.svg" alt="Cartões de visita em papel couché fosco com verniz localizado" loading="lazy" width="800" height="600"><figcaption>Cartões de visita</figcaption></figure>
-          <figure class="work"><img src="/assets/portfolio/convites.svg" alt="Convites de casamento em papel texturizado" loading="lazy" width="800" height="600"><figcaption>Convites</figcaption></figure>
-          <figure class="work"><img src="/assets/portfolio/adesivos.svg" alt="Adesivos recortados em vinil" loading="lazy" width="800" height="600"><figcaption>Adesivos</figcaption></figure>
-          <figure class="work"><img src="/assets/portfolio/banners.svg" alt="Banner em lona para fachada" loading="lazy" width="800" height="600"><figcaption>Banners</figcaption></figure>
-          <figure class="work"><img src="/assets/portfolio/placas.svg" alt="Placas de sinalização em PVC" loading="lazy" width="800" height="600"><figcaption>Placas</figcaption></figure>
-          <figure class="work"><img src="/assets/portfolio/fotos.svg" alt="Ampliação fotográfica em papel brilho" loading="lazy" width="800" height="600"><figcaption>Fotos e ampliações</figcaption></figure>
-          <figure class="work"><img src="/assets/portfolio/personalizados.svg" alt="Tags e lembranças personalizadas para festa" loading="lazy" width="800" height="600"><figcaption>Personalizados</figcaption></figure>
-          <figure class="work"><img src="/assets/portfolio/embalagens.svg" alt="Embalagens e sacolas personalizadas" loading="lazy" width="800" height="600"><figcaption>Embalagens</figcaption></figure>
+          <figure class="work"><img src="/assets/portfolio/placas.svg" alt="Placa de sinalização personalizada em PS 2 mm" loading="lazy" width="800" height="600"><figcaption>Placas em PS 2 mm</figcaption></figure>
+          <figure class="work"><img src="/assets/portfolio/adesivos.svg" alt="Adesivos recortados em vinil" loading="lazy" width="800" height="600"><figcaption>Adesivos em vinil</figcaption></figure>
+          <figure class="work"><img src="/assets/portfolio/plotagem.svg" alt="Plotagem de projeto em grande formato" loading="lazy" width="800" height="600"><figcaption>Plotagem e grandes formatos</figcaption></figure>
+          <figure class="work"><img src="/assets/portfolio/fotos.svg" alt="Impressão fotográfica em papel especial" loading="lazy" width="800" height="600"><figcaption>Impressões fotográficas</figcaption></figure>
+          <figure class="work"><img src="/assets/portfolio/banners.svg" alt="Banner impresso em lona" loading="lazy" width="800" height="600"><figcaption>Banners e lonas</figcaption></figure>
+          <figure class="work"><img src="/assets/portfolio/canecas.svg" alt="Canecas personalizadas por sublimação" loading="lazy" width="800" height="600"><figcaption>Canecas personalizadas</figcaption></figure>
+          <figure class="work"><img src="/assets/portfolio/cadernos.svg" alt="Cadernos e agendas personalizadas" loading="lazy" width="800" height="600"><figcaption>Cadernos e agendas</figcaption></figure>
+          <figure class="work"><img src="/assets/portfolio/cartoes.svg" alt="Cartões de visita e panfletos impressos" loading="lazy" width="800" height="600"><figcaption>Cartões e panfletos</figcaption></figure>
         </div>
         <div class="works__cta">
-          <p class="onmat">Gostou de algum trabalho ou já sabe o que precisa?</p>
-          <a class="btn" data-wa="portfolio" href="#orcamento">Quero algo parecido</a>
+          <p>Viu algo parecido com o que você precisa?</p>
+          <a class="btn" data-wa="portfolio" href="#contato"><svg aria-hidden="true"><use href="#i-wa"></use></svg>Quero algo assim</a>
         </div>
       </div>
     </section>
 
-    <!-- NÃO SABE O QUE PRECISA -->
-    <section class="section" aria-labelledby="ajuda-title">
-      <div class="sheet sheet--split">
-        <div>
-          <h2 id="ajuda-title">Você não precisa saber o nome do material.</h2>
-          <p class="sub">Explique o que você precisa, mande uma referência ou só conte onde vai usar. A gente ajuda você a encontrar a melhor solução.</p>
+    <!--
+      ================= DEPOIMENTOS (ainda não publicado) =================
+      Só entra no ar com depoimentos REAIS de clientes, com autorização.
+      Nada de avaliação inventada. Estrutura pronta — é só preencher,
+      tirar este comentário e colar antes da seção "Público e região":
+
+      <section class="section section--alt" aria-labelledby="dep-title">
+        <div class="wrap">
+          <div class="sec-head">
+            <p class="kicker">Depoimentos</p>
+            <h2 id="dep-title">Quem já imprimiu com a gente</h2>
+          </div>
+          <div class="who">
+            <blockquote class="who__col">
+              <h3>Nome do cliente</h3>
+              <p><em>Tipo do trabalho realizado</em></p>
+              <p>“Depoimento real do cliente.”</p>
+            </blockquote>
+            (repetir para 3 clientes de categorias diferentes:
+             placas/comunicação visual, material para empresa, personalizado ou impressão)
+          </div>
         </div>
-        <div class="sheet__side">
-          <a class="btn btn--lg" data-wa="ajuda" href="#orcamento">Preciso de ajuda</a>
-          <p class="hint">Resposta pelo WhatsApp em horário comercial.</p>
+      </section>
+    -->
+
+    <!-- ================= PÚBLICO E REGIÃO ================= -->
+    <section class="section section--alt" id="para-quem" aria-labelledby="quem-title">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="kicker">Para quem</p>
+          <h2 id="quem-title">Atendemos do documento avulso ao projeto da empresa</h2>
+        </div>
+        <div class="who">
+          <div class="who__col">
+            <h3>Pessoas</h3>
+            <ul>
+              <li>Moradores da região</li>
+              <li>Estudantes</li>
+              <li>Profissionais autônomos</li>
+              <li>Famílias</li>
+              <li>Presentes e personalizados</li>
+            </ul>
+          </div>
+          <div class="who__col">
+            <h3>Empresas</h3>
+            <ul>
+              <li>Pequenos negócios e comércios</li>
+              <li>Prestadores de serviços</li>
+              <li>Condomínios</li>
+              <li>Escritórios</li>
+              <li>Sinalização e material gráfico</li>
+            </ul>
+          </div>
+          <div class="who__col">
+            <h3>Eventos</h3>
+            <ul>
+              <li>Festas e aniversários</li>
+              <li>Eventos corporativos</li>
+              <li>Ações promocionais</li>
+              <li>Materiais personalizados</li>
+              <li>Lembrancinhas e brindes</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="area">
+          <div>
+            <h3>Onde a gente atende</h3>
+            <p>A base fica na região central de Osasco, atendendo principalmente Osasco e a vizinhança num raio próximo. Pedidos de outras regiões são avaliados conforme o serviço e a possibilidade de retirada ou entrega — é só perguntar.</p>
+          </div>
+          <div class="area__box">
+            <dl>
+              <div><dt>Endereço</dt><dd data-endereco></dd></div>
+              <div><dt>Horário</dt><dd data-horario></dd></div>
+            </dl>
+            <a class="btn btn--sm btn--ghost" data-maps href="#" target="_blank" rel="noopener">Abrir no Google Maps</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- COMO FUNCIONA -->
+    <!-- ================= COMO FUNCIONA ================= -->
     <section class="section" id="como-funciona" aria-labelledby="como-title">
-      <div class="sheet">
-        <h2 id="como-title">Como funciona</h2>
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="kicker">Como funciona</p>
+          <h2 id="como-title">Do “oi” ao material pronto</h2>
+        </div>
         <ol class="steps">
-          <li><h3>Você chama</h3><p>Envie sua ideia pelo WhatsApp.</p></li>
+          <li><h3>Você chama</h3><p>Manda a ideia, a medida ou o arquivo pelo WhatsApp.</p></li>
           <li><h3>A gente entende</h3><p>Definimos material, tamanho, quantidade e acabamento.</p></li>
-          <li><h3>Você recebe o orçamento</h3><p>Tudo explicado de forma clara.</p></li>
-          <li><h3>Produzimos</h3><p>Seu pedido entra em produção.</p></li>
-          <li><h3>Você recebe seu material</h3><p>Retirada na loja ou entrega, conforme disponibilidade.</p></li>
+          <li><h3>Orçamento</h3><p>Você recebe valor e prazo, explicados de forma clara.</p></li>
+          <li><h3>Produção</h3><p>Aprovou a arte, o pedido entra em produção.</p></li>
+          <li><h3>Entrega</h3><p>Retirada na loja ou envio, conforme o pedido.</p></li>
         </ol>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="section" id="duvidas" aria-labelledby="faq-title">
-      <div class="sheet sheet--narrow">
-        <h2 id="faq-title">Dúvidas frequentes</h2>
+    <!-- ================= FAQ ================= -->
+    <section class="section section--alt" id="duvidas" aria-labelledby="faq-title">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="kicker">Dúvidas frequentes</p>
+          <h2 id="faq-title">O que perguntam antes de fechar</h2>
+        </div>
         <div class="faq">
           <details>
             <summary>Vocês fazem a arte?</summary>
-            <p>Sim. Se você ainda não tem o arquivo, criamos ou ajustamos a arte junto com você. O valor entra no orçamento, separado da impressão.</p>
+            <p>Sim. A gente desenvolve ou ajusta a arte necessária para a produção. Dependendo da complexidade do projeto, a criação pode ser cobrada separadamente — e em pedidos maiores ou campanhas específicas ela pode entrar como cortesia. O que vale para o seu caso vai no orçamento.</p>
           </details>
           <details>
-            <summary>Posso enviar minha própria arte?</summary>
-            <p>Pode. O ideal é PDF em alta resolução, com 3 mm de sangria e fontes convertidas em curvas. Se vier diferente, a gente avisa o que precisa ajustar antes de imprimir.</p>
+            <summary>Qual é o prazo de produção?</summary>
+            <p>Depende do produto, da quantidade e do acabamento. Impressões simples normalmente têm produção rápida. Produtos personalizados, comunicação visual, placas, quantidades maiores ou serviços feitos com parceiros pedem prazo maior. O prazo exato é informado no orçamento.</p>
           </details>
           <details>
-            <summary>Qual o prazo de produção?</summary>
-            <p>Depende do material e da quantidade. Itens simples costumam sair em poucos dias; acabamentos especiais e grandes tiragens levam mais. O prazo vai junto com o orçamento.</p>
+            <summary>Existe quantidade mínima?</summary>
+            <p>Depende do produto. Para vários serviços de impressão não há mínimo relevante — dá para fazer uma unidade. Produtos personalizados e serviços feitos com parceiros podem ter quantidade mínima específica. Pergunte pelo WhatsApp que a gente confirma.</p>
           </details>
           <details>
-            <summary>Vocês trabalham com pequenas quantidades?</summary>
-            <p>Sim. Fazemos desde unidades e pequenas tiragens até pedidos maiores.</p>
+            <summary>Posso mandar meu arquivo pelo WhatsApp?</summary>
+            <p>Pode, e é o caminho mais rápido. O WhatsApp é o canal principal de atendimento: serve para enviar arquivo, pedir orçamento e alinhar o pedido.</p>
+            <p>Se puder escolher, mande PDF em alta resolução. Vindo em outro formato, a gente avisa o que precisa ser ajustado antes de imprimir.</p>
           </details>
           <details>
-            <summary>Fazem entregas?</summary>
-            <p>Você pode retirar na loja ou combinar a entrega. Disponibilidade e valor dependem da região e do tamanho do pedido.</p>
+            <summary>Vocês imprimem em qualquer material?</summary>
+            <p>Não. Cada impressora e cada processo têm materiais compatíveis. A equipe avalia arquivo, tamanho, material e finalidade antes de confirmar a produção — e, quando o processo exige um parceiro, isso é dito no orçamento.</p>
           </details>
           <details>
-            <summary>Quais formas de pagamento?</summary>
-            <p>Pix, cartão de débito e crédito. Pedidos maiores podem ter sinal na aprovação e o restante na retirada.</p>
+            <summary>Vocês fazem entrega?</summary>
+            <p>Trabalhamos principalmente com retirada na loja, em Osasco. Dependendo do pedido e da localização, a possibilidade de envio ou entrega pode ser avaliada — confirme junto com o orçamento.</p>
+          </details>
+          <details>
+            <summary>É necessário pagar sinal?</summary>
+            <p>Para trabalhos personalizados, de maior valor ou produzidos sob encomenda, pode ser pedido pagamento antecipado ou sinal antes da produção. A condição sempre é informada no orçamento, antes de qualquer coisa entrar em produção.</p>
+          </details>
+          <details>
+            <summary>Quais são as formas de pagamento?</summary>
+            <p>As formas aceitas são confirmadas no atendimento, junto com o orçamento. Chame no WhatsApp que a gente informa na hora.</p>
           </details>
         </div>
       </div>
     </section>
 
-    <!-- CTA FINAL + FORMULÁRIO -->
-    <section class="section section--onmat final" id="orcamento" aria-labelledby="final-title">
+    <!-- ================= CONTATO + FORMULÁRIO ================= -->
+    <section class="section section--ink" id="contato" aria-labelledby="final-title">
       <div class="wrap final__grid">
         <div class="final__text">
-          <h2 id="final-title" class="onmat">Tem uma ideia? Vamos colocar no papel.</h2>
-          <p class="onmat lead">Conte o que você precisa e receba seu orçamento pelo WhatsApp. Se preferir, chame direto:</p>
-          <a class="btn btn--lg" data-wa="final" href="#orcamento">Falar com a Ponto Print</a>
+          <div class="sec-head">
+            <p class="kicker">Fale com a gente</p>
+            <h2 id="final-title">Tem uma ideia? Vamos colocar no papel.</h2>
+            <p class="sub">O WhatsApp é o caminho mais rápido: você manda a ideia ou o arquivo e já recebe o retorno em horário comercial.</p>
+          </div>
+          <a class="btn btn--lg btn--onink" data-wa="final" href="#"><svg aria-hidden="true"><use href="#i-wa"></use></svg>Chamar no WhatsApp</a>
+
+          <dl class="final__info">
+            <div>
+              <dt>WhatsApp</dt>
+              <dd><a data-wa="final" data-wa-label href="#"></a><small data-atendente></small></dd>
+            </div>
+            <div>
+              <dt>Endereço</dt>
+              <dd><a data-maps href="#" target="_blank" rel="noopener"><span data-endereco></span></a><small data-endereco-obs></small></dd>
+            </div>
+            <div>
+              <dt>Horário</dt>
+              <dd data-horario></dd>
+            </div>
+          </dl>
         </div>
 
-        <form class="sheet form" id="form-orcamento" novalidate>
-          <h3>Ou deixe seu pedido aqui</h3>
+        <form class="form" id="form-orcamento" novalidate>
+          <h3>Ou deixe seu pedido por aqui</h3>
+          <p class="hint">A gente responde pelo WhatsApp informado. Leva menos de um minuto.</p>
 
           <div class="field">
             <label for="f-nome">Seu nome</label>
@@ -269,26 +591,31 @@
           </div>
 
           <div class="field">
-            <label for="f-tipo">O que você quer imprimir?</label>
+            <label for="f-tipo">O que você precisa?</label>
             <select id="f-tipo" name="tipo" required>
               <option value="" selected disabled>Escolha uma opção</option>
-              <option value="empresa">Material para empresa</option>
-              <option value="evento">Material para evento</option>
-              <option value="fotos">Fotos e impressões</option>
-              <option value="personalizado">Projeto personalizado</option>
+              <option value="placas">Placas e sinalização</option>
+              <option value="adesivos">Adesivos e vinil</option>
+              <option value="plotagem">Plotagem / grande formato</option>
+              <option value="fotos">Impressão de fotos</option>
+              <option value="impressao">Impressão e cópias (A4/A3)</option>
+              <option value="grafica">Gráfica comercial (cartões, panfletos...)</option>
+              <option value="acabamento">Encadernação e acabamentos</option>
+              <option value="personalizados">Produtos personalizados</option>
+              <option value="arte">Criação / ajuste de arte</option>
               <option value="nao-sei">Ainda não sei</option>
             </select>
             <small class="field__err" aria-live="polite"></small>
           </div>
 
           <div class="field">
-            <label for="f-qtd">Quantidade <span class="opt">(se souber)</span></label>
-            <input id="f-qtd" name="quantidade" type="text" inputmode="numeric" maxlength="40" placeholder="Ex.: 500 cartões">
+            <label for="f-qtd">Quantidade e medida <span class="opt">(se souber)</span></label>
+            <input id="f-qtd" name="quantidade" type="text" maxlength="40" placeholder="Ex.: 2 placas de 30x40 cm">
           </div>
 
           <div class="field">
             <label for="f-msg">Conte sua ideia <span class="opt">(opcional)</span></label>
-            <textarea id="f-msg" name="mensagem" rows="4" maxlength="1500" placeholder="Tamanho, papel, cores, prazo, onde vai usar..."></textarea>
+            <textarea id="f-msg" name="mensagem" rows="4" maxlength="1500" placeholder="Material, tamanho, cores, prazo, onde vai usar..."></textarea>
             <small class="field__err" aria-live="polite"></small>
           </div>
 
@@ -312,9 +639,9 @@
           </div>
 
           <div class="form__done" hidden>
-            <h3>Pedido recebido.</h3>
-            <p>Vamos responder em horário comercial. Se quiser adiantar, continue a conversa agora com o que você já preencheu.</p>
-            <a class="btn" id="done-wa" href="#" target="_blank" rel="noopener">Continuar no WhatsApp</a>
+            <h3 tabindex="-1">Pedido recebido.</h3>
+            <p>Vamos responder em horário comercial. Se quiser adiantar, continue a conversa agora — já vai tudo preenchido.</p>
+            <a class="btn" id="done-wa" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"></use></svg>Continuar no WhatsApp</a>
           </div>
         </form>
       </div>
@@ -322,26 +649,38 @@
   </main>
 
   <footer class="foot">
-    <div class="wrap foot__grid">
-      <div>
-        <a class="brand brand--foot" href="/"><span>Ponto</span><i class="brand__dot" aria-hidden="true"></i><span>Print</span></a>
-        <p>Impressão e personalização</p>
+    <div class="wrap">
+      <div class="foot__grid">
+        <div>
+          <a class="brand brand--foot" href="/"><span>Ponto</span><i class="brand__dot" aria-hidden="true"></i><span>Print</span></a>
+          <p class="foot__tag">Impressão, comunicação visual e personalizados em Osasco.</p>
+        </div>
+        <dl class="foot__info">
+          <div><dt>WhatsApp</dt><dd><a data-wa="final" data-wa-label href="#"></a></dd></div>
+          <div><dt>Endereço</dt><dd><a data-maps href="#" target="_blank" rel="noopener"><span data-endereco></span></a><small data-endereco-obs></small></dd></div>
+          <div><dt>Horário</dt><dd data-horario></dd></div>
+          <div data-email-row hidden><dt>E-mail</dt><dd><a data-email href="#"></a></dd></div>
+          <div data-social-row hidden><dt>Redes</dt><dd><a data-ig href="#" target="_blank" rel="noopener">Instagram</a></dd></div>
+        </dl>
+        <details class="foot__privacy">
+          <summary>Como usamos seus dados</summary>
+          <p>Os dados enviados pelo formulário (nome, WhatsApp, e-mail e descrição do pedido) são usados apenas para responder ao seu orçamento e ficam guardados pelo tempo necessário para isso. Não vendemos nem compartilhamos com terceiros para publicidade. Para excluir seus dados, fale conosco pelo WhatsApp.</p>
+        </details>
       </div>
-      <dl class="foot__info">
-        <div><dt>WhatsApp</dt><dd><a data-wa="final" data-wa-label href="#">(11) 99999-9999</a></dd></div>
-        <div><dt>Instagram</dt><dd><a data-ig href="#" target="_blank" rel="noopener">@pontoprint</a></dd></div>
-        <div><dt>Endereço</dt><dd data-endereco></dd></div>
-        <div><dt>Horário</dt><dd data-horario></dd></div>
-      </dl>
-      <details class="foot__privacy">
-        <summary>Como usamos seus dados</summary>
-        <p>Os dados enviados pelo formulário (nome, WhatsApp, e-mail e descrição do pedido) são usados apenas para responder ao seu orçamento e ficam guardados pelo tempo necessário para isso. Não vendemos nem compartilhamos com terceiros para publicidade. Para excluir seus dados, fale conosco pelo WhatsApp.</p>
-      </details>
+      <div class="foot__legal">
+        <span data-razao-social></span>
+        <span>CNPJ <span data-cnpj></span></span>
+        <span>&copy; <span data-ano></span> Ponto Print</span>
+      </div>
     </div>
     <div class="strip" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
   </footer>
 
-  <script src="/js/config.js?v=1"></script>
-  <script src="/js/main.js?v=2" defer></script>
+  <a class="wa-float" data-wa="flutuante" href="#contato">
+    <svg aria-hidden="true"><use href="#i-wa"></use></svg><span>Orçamento no WhatsApp</span>
+  </a>
+
+  <script src="/js/config.js?v=2"></script>
+  <script src="/js/main.js?v=3" defer></script>
 </body>
 </html>

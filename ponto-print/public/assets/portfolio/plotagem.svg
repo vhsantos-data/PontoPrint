@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="placa de sinalização personalizada">
-  <title>Placas em PS 2 mm — imagem de exemplo</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="plotagem A0 de projeto">
+  <title>Plotagem e grandes formatos — imagem de exemplo</title>
   <rect width="800" height="600" fill="#ffffff"/>
   <rect x="0" y="0" width="800" height="10" fill="#00aeef"/>
   <rect x="200" y="0" width="200" height="10" fill="#ec008c"/>
@@ -9,7 +9,7 @@
   <g fill="none" stroke="#0e0e0e" stroke-opacity=".5" stroke-width="2">
     <path d="M46 86V56h30M754 86V56h-30M46 524v30h30M754 524v30h-30"/>
   </g>
-  <text x="400" y="292" text-anchor="middle" font-family="Archivo, Helvetica, Arial, sans-serif" font-size="40" font-weight="700" fill="#0e0e0e">Placas em PS 2 mm</text>
+  <text x="400" y="292" text-anchor="middle" font-family="Archivo, Helvetica, Arial, sans-serif" font-size="40" font-weight="700" fill="#0e0e0e">Plotagem e grandes formatos</text>
   <text x="400" y="336" text-anchor="middle" font-family="Archivo, Helvetica, Arial, sans-serif" font-size="21" fill="#55565a">imagem de exemplo — substituir por foto real</text>
   <g transform="translate(352 372)">
     <rect width="24" height="10" fill="#00aeef"/><rect x="24" width="24" height="10" fill="#ec008c"/>
