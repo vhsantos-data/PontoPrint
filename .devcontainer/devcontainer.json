@@ -1,6 +1,7 @@
 {
   "name": "Ponto Print",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+  "workspaceFolder": "/workspaces/PontoPrint/ponto-print",
   "forwardPorts": [
     3000
   ],

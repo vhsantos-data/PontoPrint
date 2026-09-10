@@ -138,11 +138,13 @@ Para medir campanhas, use links com `?utm_source=instagram` (ou `google`, `carta
 
 ## GitHub Codespaces
 
-O repositório traz `.devcontainer/devcontainer.json` (Node 22, porta 3000
-encaminhada, `npm install` e `.env` criados sozinhos).
+O `.devcontainer/devcontainer.json` fica na **raiz do repositório** (é onde o
+Codespaces procura), apontando para esta pasta: Node 22, porta 3000
+encaminhada, `npm install` e `.env` criados sozinhos.
 
 1. No GitHub: **Code → Codespaces → Create codespace** (escolha a branch).
-2. Espere o `postCreateCommand` terminar. Ele instala as dependências e roda
+2. O terminal já abre em `ponto-print/`. Espere o `postCreateCommand`
+   terminar: ele instala as dependências e roda
    `node scripts/preparar-env.mjs`, que cria o `.env` já com `ADMIN_TOKEN` e
    `IP_HASH_SALT` gerados. **O token do painel aparece no terminal** — copie,
    ou leia depois com `grep ADMIN_TOKEN .env`.
@@ -158,9 +160,18 @@ encaminhada, `npm install` e `.env` criados sozinhos).
 com o botão direito na porta 3000 → **Port Visibility → Public**. Sem isso, a
 URL pede login do GitHub. Lembre de voltar para Private depois.
 
-Se abrir sem o devcontainer (imagem padrão), confira `node -v`: precisa ser
-22.13+. Se não for: `nvm install 22 && nvm use 22`. E rode
-`node scripts/preparar-env.mjs` na mão antes do `npm run dev`.
+Se o Codespace abrir **sem** o devcontainer (imagem padrão), o terminal começa
+na raiz do repositório, onde não há `package.json` — `npm run dev` falha com
+`ENOENT`. Nesse caso:
+
+```bash
+cd ponto-print
+node -v                          # precisa ser 22.13+
+                                 # se não for: nvm install 22 && nvm use 22
+npm install
+node scripts/preparar-env.mjs
+npm run dev
+```
 
 ## Deploy
 
