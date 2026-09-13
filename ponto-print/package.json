@@ -4,11 +4,15 @@
   "description": "Landing page + API de orçamentos da Ponto Print (impressão e personalização)",
   "private": true,
   "type": "module",
-  "engines": { "node": ">=22.13" },
+  "engines": {
+    "node": ">=22.13"
+  },
   "scripts": {
     "start": "node --disable-warning=ExperimentalWarning server/index.js",
     "dev": "node --disable-warning=ExperimentalWarning --watch server/index.js",
-    "gen:token": "node -e \"console.log(require('crypto').randomBytes(32).toString('base64url'))\""
+    "gen:token": "node -e \"console.log(require('crypto').randomBytes(32).toString('base64url'))\"",
+    "img": "node scripts/preparar-imagens.mjs",
+    "og": "node scripts/gerar-og.mjs"
   },
   "dependencies": {
     "dotenv": "^16.4.5",
@@ -17,5 +21,8 @@
     "helmet": "^8.3.0",
     "nodemailer": "^6.9.16",
     "zod": "^4.5.4"
+  },
+  "devDependencies": {
+    "playwright": "^1.56.1"
   }
 }

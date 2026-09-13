@@ -31,30 +31,49 @@ continua funcionando (grava no banco e o painel mostra).
 - Para receber cada pedido por e-mail: `.env` → `SMTP_*` e `NOTIFY_EMAIL_TO`.
   Com Gmail é preciso senha de app, não a senha da conta.
 
-### 3. Logo em vetor
-O site desenha a marca "Ponto•Print" em CSS (texto + ponto magenta). Assim que
-chegar o arquivo oficial (SVG, AI ou PDF vetorial — ou PNG grande com fundo
-transparente), substituir:
-- topo e rodapé: os dois blocos `<a class="brand">` em `public/index.html`;
-- favicon: `public/assets/favicon.svg`;
-- imagem de compartilhamento: `design/og.html` (ver item 7).
+### 3. ~~Logo~~ ✅ resolvido
 
-### 4. Fotos reais dos trabalhos
-As 8 imagens do portfólio são placeholders com o aviso "substituir por foto
-real". Trocar por fotos de trabalhos de verdade da Ponto Print:
-- mínimo 8, horizontais, proporção próxima de 4:3;
-- boa iluminação, fundo limpo;
-- JPG ou WebP, cerca de 1200px de largura;
-- salvar em `public/assets/portfolio/` e apontar o `src` em `public/index.html`.
+Os arquivos oficiais chegaram e estão aplicados: logo no topo e no rodapé,
+favicon e ícone de atalho a partir do monograma "PP", e a paleta do site
+agora usa as cores exatas da marca, amostradas do arquivo:
 
-Já estão previstas: placas em PS 2 mm, adesivos em vinil, plotagem, impressão
-fotográfica, banners/lonas, canecas, cadernos/agendas, cartões/panfletos.
-Faltam cobrir das sugestões: **encadernações** e **camisetas**.
+| | |
+| --- | --- |
+| Ciano | `#1c9dd9` |
+| Magenta | `#e50e7e` |
+| Amarelo | `#f9eb1e` |
+| Preto | `#000000` |
 
-**Importante:** manter o texto do `alt` de cada imagem descrevendo o material.
-Ele conta para acessibilidade e para o Google.
+Originais preservados em `marca-original/logos/` (fora de `public/`, não vão
+ao ar). As versões que o site usa ficam em `public/assets/marca/`.
 
-## 🟡 Confirmar antes de prometer no site
+**Só falta o vetor.** O que chegou é PNG com transparência, que serve bem para
+web. Se existir SVG, AI ou PDF vetorial, vale substituir: fica nítido em
+qualquer tamanho e pesa menos. Rode `node scripts/preparar-imagens.mjs` depois
+de trocar os originais.
+
+### 4. ~~Fotos reais~~ ✅ resolvido (com ressalvas)
+
+O portfólio está no ar com 8 fotos de trabalhos de verdade: placas em PS 2 mm,
+placas de sinalização, adesivos, banners/wind banner, camisetas, canecas,
+cadernos e brindes. Mais a foto da loja na seção de endereço.
+
+Originais em `fotos-dos-trabalhos/`, versões publicadas em
+`public/assets/portfolio/`. Para trocar qualquer uma, edite a lista no topo de
+`scripts/preparar-imagens.mjs` e rode o script.
+
+**Duas categorias importantes ainda sem foto:** **plotagem / grande formato**
+(A2, A1, A0, bobina) e **encadernação**. As duas aparecem entre os serviços em
+destaque, então valeria fotografar.
+
+**Uma foto ficou de fora de propósito:** o painel de fotos "Kiara & Jose" tem
+rostos de pessoas identificáveis. Publicar exige autorização delas, não só do
+cliente que encomendou.
+
+**Uma foto publicada merece decisão de vocês:** o caderno com personagem da
+Disney. É um trabalho real, mas anunciar no site a personalização de personagem
+de terceiro é mais exposto do que fazer a peça sob encomenda. Se preferirem
+tirar, me avisem — troco por outra.
 
 ### 5. Formas de pagamento
 Hoje o FAQ responde "as formas aceitas são confirmadas no atendimento" — está
@@ -68,14 +87,15 @@ entrega é avaliado caso a caso — exatamente o que foi informado. Se houver
 política oficial (raio de entrega, valor, prazo), atualizar a pergunta
 "Vocês fazem entrega?".
 
-### 7. Imagem de compartilhamento (og.png)
-Já existe uma arte tipográfica pronta em `public/assets/og.png` (1200×630), com
-a marca, a frase "Impressão que dá vida às suas ideias." e o WhatsApp. A versão
-ideal, quando houver foto boa, leva **foto de um trabalho real + logo + frase**.
+### 7. ~~Imagem de compartilhamento~~ ✅ resolvido
 
-Para regerar depois de editar `design/og.html`:
+A `og.png` (1200×630) foi refeita com o logo oficial, a assinatura da marca,
+três fotos de trabalhos reais e o WhatsApp. É o que aparece quando alguém
+manda o link no WhatsApp ou no Instagram.
+
+Para alterar: edite `design/og.html` (é HTML e CSS comum) e rode:
+
 ```bash
-npm i -D playwright && npx playwright install chromium
 node scripts/gerar-og.mjs
 ```
 
