@@ -45,7 +45,7 @@ scripts/gerar-og.mjs  regera a og.png a partir do design/og.html
 ## Rodando
 
 ```bash
-npm install
+npm install --omit=dev          # o site não precisa das ferramentas de imagem
 node scripts/preparar-env.mjs   # cria o .env e mostra o token do painel
 npm run dev                     # http://localhost:3000 (recarrega ao salvar)
 ```
@@ -77,6 +77,23 @@ A lista completa, com o motivo de cada pendência, está em
    Nginx/Caddy/Cloudflare/Railway, e as notificações que quiser.
 7. Ao alterar CSS/JS em produção, troque o `?v=3` nos links do HTML (cache de 1
    dia nos estáticos).
+
+## Regerar imagens
+
+Só é necessário ao trocar fotos ou arquivos da marca. Precisa do Playwright,
+que é pesado e por isso fica fora da instalação normal:
+
+```bash
+npm install                     # agora sim, com as devDependencies
+npx playwright install chromium # só na primeira vez
+npm run img                     # fotos do portfólio, logo, favicon
+npm run og                      # imagem de compartilhamento
+```
+
+`scripts/preparar-imagens.mjs` tem no topo a lista do que vira o quê: para
+trocar uma foto do portfólio, aponte para outro arquivo de
+`fotos-dos-trabalhos/` e rode `npm run img`. Ele sempre parte do original,
+nunca do resultado anterior.
 
 ## Serviços e tipos de pedido
 
